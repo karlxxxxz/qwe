@@ -1,0 +1,40 @@
+#main_title {
+    text-align: center;
+    background-image: linear-gradient(white, lightgray);
+    color: #000000;
+    padding: 20px;
+    letter-spacing: 2px;
+    font-weight: 500;
+}
+
+.box h2 {
+    float: left;
+}
+
+.box1 button {
+    float: right;
+}
+
+.container {
+    margin-top: 50px;
+}
+
+h6 {
+    text-align: center;
+    color: red;
+}
+
+
+.custom-navbar {
+    background: linear-gradient(135deg, #000000, #434343, #141E30, #243B55);
+}
+
+
+.navbar-brand,
+.nav-link {
+    color: #fff !important;
+}
+
+.nav-link:hover {
+    color: #ffdd57 !important;
+}
