@@ -1,0 +1,41 @@
+-- Positions
+CREATE TABLE IF NOT EXISTS positions (
+  posID INT AUTO_INCREMENT PRIMARY KEY,
+  posName VARCHAR(150) NOT NULL,
+  numOfPositions INT NOT NULL DEFAULT 1,
+  posStat ENUM('open','closed') NOT NULL DEFAULT 'open'
+) ENGINE=InnoDB;
+
+-- Candidates
+CREATE TABLE IF NOT EXISTS candidates (
+  candID INT AUTO_INCREMENT PRIMARY KEY,
+  candFName VARCHAR(100) NOT NULL,
+  candMName VARCHAR(100),
+  candLName VARCHAR(100) NOT NULL,
+  posID INT NOT NULL,
+  candStat ENUM('active','inactive') NOT NULL DEFAULT 'active',
+  FOREIGN KEY (posID) REFERENCES positions(posID) ON DELETE CASCADE
+) ENGINE=InnoDB;
+
+-- Voters
+CREATE TABLE IF NOT EXISTS voters (
+  voterID INT AUTO_INCREMENT PRIMARY KEY,
+  voterPass VARCHAR(255) NOT NULL,
+  voterFName VARCHAR(100) NOT NULL,
+  voterMName VARCHAR(100),
+  voterLName VARCHAR(100) NOT NULL,
+  voterStat ENUM('active','inactive') NOT NULL DEFAULT 'active',
+  voted ENUM('Y','N') NOT NULL DEFAULT 'N'
+) ENGINE=InnoDB;
+
+-- Votes
+CREATE TABLE IF NOT EXISTS votes (
+  voteID INT AUTO_INCREMENT PRIMARY KEY,
+  posID INT NOT NULL,
+  voterID INT NOT NULL,
+  candID INT NOT NULL,
+  created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+  FOREIGN KEY (posID) REFERENCES positions(posID) ON DELETE CASCADE,
+  FOREIGN KEY (voterID) REFERENCES voters(voterID) ON DELETE CASCADE,
+  FOREIGN KEY (candID) REFERENCES candidates(candID) ON DELETE CASCADE
+) ENGINE=InnoDB;
