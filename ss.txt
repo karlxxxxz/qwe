@@ -1,0 +1,4 @@
+linear-gradient(to right top, #3c3e40, #2e3132, #222525, #171918, #090b08);
+
+
+#1C1211
