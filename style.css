@@ -1,40 +1,43 @@
-#main_title {
-    text-align: center;
-    background-image: linear-gradient(white, lightgray);
-    color: #000000;
-    padding: 20px;
-    letter-spacing: 2px;
-    font-weight: 500;
+/* style.css - global styling for the election system */
+
+body {
+  background: #f5f7fb;
+  color: #222;
+  font-family: "Segoe UI", Roboto, Arial, sans-serif;
 }
 
-.box h2 {
-    float: left;
+.navbar {
+  background: linear-gradient(90deg, #0b3d91, #1352b8);
 }
 
-.box1 button {
-    float: right;
+.container-box {
+  background: #fff;
+  border-radius: 8px;
+  padding: 18px;
+  box-shadow: 0 6px 18px rgba(12, 40, 80, 0.06);
 }
 
-.container {
-    margin-top: 50px;
+h2 { margin-bottom: 10px; }
+
+.table thead th {
+  background: #0b3d91;
+  color: #fff;
+  border: 0;
 }
 
-h6 {
-    text-align: center;
-    color: red;
+.table tbody td {
+  vertical-align: middle;
 }
 
-
-.custom-navbar {
-    background: linear-gradient(135deg, #000000, #434343, #141E30, #243B55);
+.btn {
+  border-radius: 6px;
 }
 
+/* messages */
+.alert-centered { text-align:center; font-weight:600; color:#000; }
 
-.navbar-brand,
-.nav-link {
-    color: #fff !important;
-}
-
-.nav-link:hover {
-    color: #ffdd57 !important;
+/* small screens */
+@media (max-width: 575px) {
+  .container-box { padding: 12px; }
+  .table-responsive { font-size: 13px; }
 }
